@@ -485,10 +485,10 @@ GameObject:
   - component: {fileID: 994506037640310574}
   - component: {fileID: 8966338996546626263}
   - component: {fileID: 551709685149916636}
-  - component: {fileID: 551709685149916637}
   - component: {fileID: 666542839}
   - component: {fileID: 2727063818991432162}
   - component: {fileID: 2101400607}
+  - component: {fileID: -3423253974649307415}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Player
@@ -658,22 +658,6 @@ MonoBehaviour:
   mainFire: {fileID: 4695072826815515885}
   leftFire: {fileID: 2187340724597348933}
   rightFire: {fileID: 8137329622372519362}
---- !u!114 &551709685149916637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951727598985478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d291e8d0fe1bf4e88888d6b9ada252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crashSound: {fileID: 8300000, guid: ca8ac1e037656b248af3a74181a78028, type: 3}
-  finishSound: {fileID: 8300000, guid: 235ca2704d4a2ef4aa6008b10aeef724, type: 3}
-  finishParticles: {fileID: 9152611657492452594}
-  crashParticles: {fileID: 7503991986161137220}
 --- !u!65 &666542839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -712,6 +696,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ee50d544461044d8153630d13d24f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3423253974649307415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634951727598985478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3ce9fc9061b6e488ee03324508ae42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crashSound: {fileID: 8300000, guid: ca8ac1e037656b248af3a74181a78028, type: 3}
+  finishSound: {fileID: 8300000, guid: 235ca2704d4a2ef4aa6008b10aeef724, type: 3}
+  finishParticles: {fileID: 9152611657492452594}
+  crashParticles: {fileID: 7503991986161137220}
+  scoreText: {fileID: 0}
+  points: 0
 --- !u!1 &6774021119673119794
 GameObject:
   m_ObjectHideFlags: 0

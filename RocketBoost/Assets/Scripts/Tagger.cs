@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Tagger : MonoBehaviour
 {
@@ -9,15 +10,20 @@ public class Tagger : MonoBehaviour
     [SerializeField] AudioClip finishSound;
     [SerializeField] ParticleSystem finishParticles;
     [SerializeField] ParticleSystem crashParticles;
+    public TMP_Text scoreText;
     bool isTransitioning = false;
     bool cheatCollider = false;
 
     AudioSource audioSource;
     bool boxCollider = false;
+    public int points = 0;
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<Collider>();
+        scoreText = scoreText.GetComponent<TMP_Text>();
+        points = 0;
+        scoreText.text = points.ToString();
     }
 
     private void Update()
@@ -60,6 +66,14 @@ public class Tagger : MonoBehaviour
                 break;
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "Point")
+        {
+            scoreText.text = points.ToString();
+        }
+    }
+
     void VFXenter(AudioClip soundClip, ParticleSystem effectName)
     {
         audioSource.Stop();
@@ -76,6 +90,7 @@ public class Tagger : MonoBehaviour
     }
     void NextLevelSequence(float invokeDelay)
     {
+        Debug.Log("FD");
         VFXenter(finishSound, finishParticles);
         isTransitioning = true;
         GetComponent<Movement>().enabled = false;
